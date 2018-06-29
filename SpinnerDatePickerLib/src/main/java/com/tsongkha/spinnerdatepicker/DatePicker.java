@@ -47,7 +47,7 @@ import java.util.Locale;
  */
 public class DatePicker extends FrameLayout {
 
-    private static final String DATE_FORMAT = "MM/dd/yyyy";
+    private static final String DATE_FORMAT = "dd/MM/yyyy";
 
     private static final boolean DEFAULT_ENABLED_STATE = true;
 
