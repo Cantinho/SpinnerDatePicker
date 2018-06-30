@@ -60,7 +60,7 @@ public class SpinnerDatePickerDialogBuilder {
         return this;
     }
 
-    public SpinnerDatePickerDialogBuilder setTypefacce(final Typeface typeface) {
+    public SpinnerDatePickerDialogBuilder setTypeface(final Typeface typeface) {
         this.typeface = typeface;
         return this;
     }
