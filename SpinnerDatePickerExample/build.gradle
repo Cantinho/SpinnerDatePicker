@@ -23,9 +23,9 @@ buildscript {
         mavenCentral()
         google()
     }
-    dependencies {
-        classpath 'com.google.gms:google-services:3.1.0'
-    }
+//    dependencies {
+//        classpath 'com.google.gms:google-services:3.1.0'
+//    }
 }
 
 dependencies {
@@ -40,4 +40,4 @@ dependencies {
     compile 'com.android.support:design:26.+'
     testCompile 'junit:junit:4.12'
 }
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'

@@ -54,13 +54,14 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
     setButton(BUTTON_NEGATIVE, context.getText(android.R.string.cancel),
         (OnClickListener) null);
 
-    getButton(BUTTON_POSITIVE).setTypeface(typeface);
-    getButton(BUTTON_NEGATIVE).setTypeface(typeface);
-
     LayoutInflater inflater =
         (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     View view = inflater.inflate(R.layout.date_picker_dialog_container, null);
     setView(view);
+
+    getButton(BUTTON_POSITIVE).setTypeface(typeface);
+    getButton(BUTTON_NEGATIVE).setTypeface(typeface);
+
     mDatePicker = new DatePicker((ViewGroup) view, spinnerTheme, typeface);
     mDatePicker.setMinDate(minDate.getTimeInMillis());
     mDatePicker.setMaxDate(maxDate.getTimeInMillis());
