@@ -59,9 +59,6 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
     View view = inflater.inflate(R.layout.date_picker_dialog_container, null);
     setView(view);
 
-    getButton(BUTTON_POSITIVE).setTypeface(typeface);
-    getButton(BUTTON_NEGATIVE).setTypeface(typeface);
-
     mDatePicker = new DatePicker((ViewGroup) view, spinnerTheme, typeface);
     mDatePicker.setMinDate(minDate.getTimeInMillis());
     mDatePicker.setMaxDate(maxDate.getTimeInMillis());
