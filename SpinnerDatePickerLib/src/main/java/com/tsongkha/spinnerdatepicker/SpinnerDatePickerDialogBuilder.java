@@ -2,6 +2,7 @@ package com.tsongkha.spinnerdatepicker;
 
 import android.content.Context;
 
+import android.graphics.Typeface;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -13,6 +14,7 @@ public class SpinnerDatePickerDialogBuilder {
     private boolean isTitleShown = true;
     private int theme = -1;                 //default theme
     private int spinnerTheme = -1;          //default theme
+    private Typeface typeface = Typeface.DEFAULT;
     private Calendar defaultDate = new GregorianCalendar(1980, 0, 1);
     private Calendar minDate = new GregorianCalendar(1900, 0, 1);
     private Calendar maxDate = new GregorianCalendar(2100, 0, 1);
@@ -58,6 +60,11 @@ public class SpinnerDatePickerDialogBuilder {
         return this;
     }
 
+    public SpinnerDatePickerDialogBuilder setTypefacce(final Typeface typeface) {
+        this.typeface = typeface;
+        return this;
+    }
+
     public SpinnerDatePickerDialogBuilder showTitle(boolean showTitle) {
         this.isTitleShown = showTitle;
         return this;
@@ -67,6 +74,7 @@ public class SpinnerDatePickerDialogBuilder {
         if (context == null) throw new IllegalArgumentException("Context must not be null");
         if (maxDate.getTime().getTime() <= minDate.getTime().getTime()) throw new IllegalArgumentException("Max date is not after Min date");
 
-        return new DatePickerDialog(context, theme, spinnerTheme, callBack, defaultDate, minDate, maxDate, isDayShown, isTitleShown);
+        return new DatePickerDialog(context, theme, spinnerTheme, callBack, defaultDate, minDate,
+            maxDate, isDayShown, isTitleShown, typeface);
     }
 }

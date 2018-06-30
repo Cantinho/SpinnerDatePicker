@@ -18,6 +18,7 @@ package com.tsongkha.spinnerdatepicker;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.InputType;
@@ -86,8 +87,9 @@ public class DatePicker extends FrameLayout {
     private boolean mIsEnabled = DEFAULT_ENABLED_STATE;
 
     private boolean mIsDayShown = true;
+    private Typeface typeface;
 
-    DatePicker(ViewGroup root, int numberPickerStyle) {
+    DatePicker(ViewGroup root, int numberPickerStyle, Typeface typeface) {
         super(root.getContext());
         mContext = root.getContext();
 
@@ -144,6 +146,7 @@ public class DatePicker extends FrameLayout {
         mDaySpinner.setOnLongPressUpdateInterval(100);
         mDaySpinner.setOnValueChangedListener(onChangeListener);
         mDaySpinnerInput = NumberPickers.findEditText(mDaySpinner);
+        mDaySpinnerInput.setTypeface(typeface);
 
 
         // month
@@ -156,6 +159,7 @@ public class DatePicker extends FrameLayout {
         mMonthSpinner.setOnLongPressUpdateInterval(200);
         mMonthSpinner.setOnValueChangedListener(onChangeListener);
         mMonthSpinnerInput = NumberPickers.findEditText(mMonthSpinner);
+        mMonthSpinnerInput.setTypeface(typeface);
 
         // year
         mYearSpinner = (NumberPicker) inflater.inflate(R.layout.number_picker_year,
@@ -164,6 +168,7 @@ public class DatePicker extends FrameLayout {
         mYearSpinner.setOnLongPressUpdateInterval(100);
         mYearSpinner.setOnValueChangedListener(onChangeListener);
         mYearSpinnerInput = NumberPickers.findEditText(mYearSpinner);
+        mYearSpinnerInput.setTypeface(typeface);
 
         // initialize to current date
         mCurrentDate.setTimeInMillis(System.currentTimeMillis());
@@ -505,7 +510,11 @@ public class DatePicker extends FrameLayout {
         updateSpinners();
     }
 
-    private static class SavedState extends BaseSavedState {
+    public void setTypeface(Typeface typeface) {
+        this.typeface = typeface;
+    }
+
+  private static class SavedState extends BaseSavedState {
 
         @SuppressWarnings("unused") public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
 
