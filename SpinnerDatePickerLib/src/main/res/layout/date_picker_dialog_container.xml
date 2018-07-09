@@ -1,8 +1,49 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:id="@+id/datePickerContainer"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_horizontal">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/date_picker_main_container"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
 
-</FrameLayout>
+  <TextView
+    android:id="@+id/title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
 
+
+  <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/datePickerContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+  </FrameLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:background="#EDEDED">
+
+    <TextView
+      android:id="@+id/cancel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="15dp"
+      android:layout_alignParentLeft="true"
+      android:text="@string/dialog_cancel"
+      android:textSize="14sp"
+      android:textColor="#E7566E"/>
+
+    <TextView
+      android:id="@+id/ok"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="15dp"
+      android:layout_alignParentRight="true"
+      android:text="@string/dialog_done"
+      android:textSize="14sp"
+      android:textColor="#E7566E"/>
+  </RelativeLayout>
+
+</LinearLayout>
