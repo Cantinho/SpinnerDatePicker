@@ -70,7 +70,8 @@ public class DatePickerDialog extends AlertDialog implements View.OnClickListene
     okButton.setOnClickListener(this);
     //cancel button has no click listener
 
-    mDatePicker = new DatePicker((ViewGroup) view, spinnerTheme, typeface);
+    final View datePickerContainerView = inflater.inflate(R.layout.date_picker_container, null);
+    mDatePicker = new DatePicker((ViewGroup) datePickerContainerView, spinnerTheme, typeface);
     mDatePicker.setMinDate(minDate.getTimeInMillis());
     mDatePicker.setMaxDate(maxDate.getTimeInMillis());
     mDatePicker.init(defaultDate.get(Calendar.YEAR), defaultDate.get(Calendar.MONTH),
