@@ -10,8 +10,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
-    android:textSize="18sp"
-    android:textColor="#E7566E"/>
+    android:textColor="#E7566E"
+    android:textSize="18sp"/>
 
   <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/date_picker_container"
@@ -33,8 +33,8 @@
       android:layout_margin="15dp"
       android:layout_alignParentLeft="true"
       android:text="@string/dialog_cancel"
-      android:textSize="14sp"
-      android:textColor="#E7566E"/>
+      android:textColor="#E7566E"
+      android:textSize="14sp"/>
 
     <TextView
       android:id="@+id/ok"
@@ -43,8 +43,8 @@
       android:layout_margin="15dp"
       android:layout_alignParentRight="true"
       android:text="@string/dialog_done"
-      android:textSize="14sp"
-      android:textColor="#E7566E"/>
+      android:textColor="#E7566E"
+      android:textSize="14sp"/>
   </RelativeLayout>
 
 </LinearLayout>
