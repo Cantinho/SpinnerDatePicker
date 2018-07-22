@@ -26,6 +26,7 @@ public class DatePickerDialog extends AlertDialog implements View.OnClickListene
 
   private final DatePicker mDatePicker;
   private final OnDateSetListener mCallBack;
+  private final View.OnClickListener mCancelCallback;
   private final DateFormat mTitleDateFormat;
 
   private boolean mIsDayShown = true;
@@ -38,6 +39,7 @@ public class DatePickerDialog extends AlertDialog implements View.OnClickListene
   DatePickerDialog(Context context,
       int theme,
       int spinnerTheme,
+      View.OnClickListener cancelCallback,
       OnDateSetListener callBack,
       Calendar defaultDate,
       Calendar minDate,
@@ -47,6 +49,7 @@ public class DatePickerDialog extends AlertDialog implements View.OnClickListene
       Typeface typeface) {
     super(context, theme);
 
+    mCancelCallback = cancelCallback;
     mCallBack = callBack;
     mTitleDateFormat = DateFormat.getDateInstance(DateFormat.LONG);
     mIsDayShown = isDayShown;
@@ -133,6 +136,9 @@ public class DatePickerDialog extends AlertDialog implements View.OnClickListene
       mDatePicker.clearFocus();
       mCallBack.onDateSet(mDatePicker, mDatePicker.getYear(),
           mDatePicker.getMonth(), mDatePicker.getDayOfMonth());
+    }
+    if(this.isShowing()) {
+      dismiss();
     }
   }
 
